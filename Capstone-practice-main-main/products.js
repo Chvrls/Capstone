@@ -4,6 +4,7 @@ import { cpu } from "./temp-data-for-products/cpu.js";
 import { gpu } from "./temp-data-for-products/gpu.js";
 import { motherboard } from "./temp-data-for-products/motherboard.js";
 import { ram } from "./temp-data-for-products/ram.js";
+import { storage } from "./temp-data-for-products/storage.js";
 
 const productsGrid = document.querySelector('#grid');
 const buttonMonitor = document.querySelector('#btn-monitor');
@@ -12,6 +13,7 @@ const buttonCPU = document.querySelector('#btn-cpu');
 const buttonGPU = document.querySelector('#btn-gpu');
 const buttonMotherboard = document.querySelector('#btn-motherboard');
 const buttonRAM = document.querySelector('#btn-ram');
+const buttonStorage = document.querySelector('#btn-storage');
 
 
 
@@ -103,6 +105,21 @@ buttonRAM.addEventListener('click', () => {
     </div>
       <p class="mt-3 mx-3 fw-bold">${ram.name}</p>
       <p class="mt-5 mx-3 fw-bold">₱${ram.price}</p>
+    </div>` 
+
+    productsGrid.innerHTML = productsHTML;
+  })
+});
+
+buttonStorage.addEventListener('click', () => { 
+  productsHTML = '';
+  storage.forEach((storage) => { 
+    productsHTML += `<div class="product-card">
+    <div class="product-img-container">
+      <img class="product-image" src="${storage.image}" alt="">
+    </div>
+      <p class="mt-3 mx-3 fw-bold">${storage.name}</p>
+      <p class="mt-5 mx-3 fw-bold">₱${storage.price}</p>
     </div>` 
 
     productsGrid.innerHTML = productsHTML;
