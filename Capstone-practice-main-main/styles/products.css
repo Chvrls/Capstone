@@ -1,17 +1,30 @@
 #grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    gap: 40px; 
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px; 
+    margin-inline: 200px;
+}
+
+@media (max-width: 2000px) {
+    #grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
 }
 
 .product-card {
     display: flex;
     flex-direction: column;
-    width: 300px;
+    width: 270px;
     border: 1px solid rgb(207, 207, 207);
+    border-radius: 10px;
+}
+
+.product-img-container {
+    padding: 10px;
 }
 
 .product-image {
-    width: 298px;
+    width: 250px;
     height: 250px;
+    border-radius: 10px;
 }
