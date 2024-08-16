@@ -1,11 +1,13 @@
 import { pcCase } from "./temp-data-for-products/pcCase.js";
 import { monitors } from "./temp-data-for-products/monitors.js";
 import { cpu } from "./temp-data-for-products/cpu.js";
+import { gpu } from "./temp-data-for-products/gpu.js";
 
 const productsGrid = document.querySelector('#grid');
 const buttonMonitor = document.querySelector('#btn-monitor');
 const buttonPcCase = document.querySelector('#btn-pc-case');
 const buttonCPU = document.querySelector('#btn-cpu');
+const buttonGPU = document.querySelector('#btn-gpu');
 
 
 
@@ -52,6 +54,21 @@ buttonCPU.addEventListener('click', () => {
     </div>
       <p class="mt-3 mx-3 fw-bold">${cpu.name}</p>
       <p class="mt-5 mx-3 fw-bold">₱${cpu.price}</p>
+    </div>` 
+
+    productsGrid.innerHTML = productsHTML;
+  })
+});
+
+buttonGPU.addEventListener('click', () => { 
+  productsHTML = '';
+  gpu.forEach((gpu) => { 
+    productsHTML += `<div class="product-card">
+    <div class="product-img-container">
+      <img class="product-image" src="${gpu.image}" alt="">
+    </div>
+      <p class="mt-3 mx-3 fw-bold">${gpu.name}</p>
+      <p class="mt-5 mx-3 fw-bold">₱${gpu.price}</p>
     </div>` 
 
     productsGrid.innerHTML = productsHTML;
