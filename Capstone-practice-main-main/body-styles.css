@@ -1,0 +1,42 @@
+.landing-page {
+  margin-bottom: 300px;
+}
+
+.forge-ad {
+  background-color: rgb(200, 200, 200);
+  margin-top: 500px;
+
+}
+
+.forge-ad-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 0px;
+  margin: 0px 100px;
+}
+
+.pc-bundle-img-container {
+  display: flex;
+  justify-content: center;
+}
+
+.pc-bundle-img {
+  width: 475px;
+}
+
+.h2-forge-ad {
+  font-size: 60px;
+  margin-bottom: 40px;
+}
+
+.p-forge-ad {
+  font-size: 18px;
+  margin-bottom: 40px;
+}
+
+.forge-now-btn-container {
+  display: flex;
+  justify-content: end;
+}

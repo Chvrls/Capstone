@@ -1,0 +1,17 @@
+#grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 40px; 
+}
+
+.product-card {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    border: 1px solid rgb(207, 207, 207);
+}
+
+.product-image {
+    width: 298px;
+    height: 250px;
+}
