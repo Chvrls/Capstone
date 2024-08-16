@@ -1,67 +1,38 @@
-const productsGrid = document.querySelector('#grid');
+import { pcCase } from "./temp-data-for-products/pcCase.js";
+import { monitors } from "./temp-data-for-products/monitors.js";
 
-const products = [
-  {
-    image: 'images/image-placeholder.png',
-    name: 'Gaming Computer',
-    price: 20000
-  },
-  {
-    image: 'images/image-placeholder.png',
-    name: 'Gaming Computer',
-    price: 20000
-  },
-  {
-    image: 'images/image-placeholder.png',
-    name: 'Gaming Computer',
-    price: 20000
-  },
-  {
-    image: 'images/image-placeholder.png',
-    name: 'Gaming Computer',
-    price: 20000
-  },
-  {
-    image: 'images/image-placeholder.png',
-    name: 'Gaming Computer',
-    price: 20000
-  }, {
-    image: 'images/image-placeholder.png',
-    name: 'Gaming Computer',
-    price: 20000
-  },
-  {
-    image: 'images/image-placeholder.png',
-    name: 'Gaming Computer',
-    price: 20000
-  },
-  {
-    image: 'images/image-placeholder.png',
-    name: 'Gaming Computer',
-    price: 20000
-  },
-  {
-    image: 'images/image-placeholder.png',
-    name: 'Gaming Computer',
-    price: 20000
-  }, {
-    image: 'images/image-placeholder.png',
-    name: 'Gaming Computer',
-    price: 20000
-  }
-];
+const productsGrid = document.querySelector('#grid');
+const buttonMonitor = document.querySelector('#btn-monitor');
+
+
 
 let productsHTML = '';
 
-products.forEach((product) => { 
+
+pcCase.forEach((pcCase) => { 
   productsHTML += `
     <div class="product-card">
     <div class="product-img-container">
-      <img class="product-image" src="${product.image}" alt="">
+      <img class="product-image" src="${pcCase.image}" alt="">
     </div>
-      <p class="mt-3 mx-3 fw-bold">${product.name}</p>
-      <p class="mt-5 mx-3 fw-bold">₱${product.price}</p>
+      <p class="mt-3 mx-3 fw-bold">${pcCase.name}</p>
+      <p class="mt-5 mx-3 fw-bold">₱${pcCase.price}</p>
     </div>`
 })
 
 productsGrid.innerHTML = productsHTML;
+
+buttonMonitor.addEventListener('click', () => { 
+  productsHTML = '';
+  monitors.forEach((monitor) => { 
+    productsHTML += `<div class="product-card">
+    <div class="product-img-container">
+      <img class="product-image" src="${monitor.image}" alt="">
+    </div>
+      <p class="mt-3 mx-3 fw-bold">${monitor.name}</p>
+      <p class="mt-5 mx-3 fw-bold">₱${monitor.price}</p>
+    </div>` 
+
+    productsGrid.innerHTML = productsHTML;
+  })
+});
