@@ -143,7 +143,7 @@ let productsHTML = '';
 //   })
 // });
 
-function renderProductsHTML(category, product) { 
+function renderProductsHTML(category) { 
   category.forEach((product) => {
         productsHTML += `<div class="product-card">
         <div class="product-img-container">
@@ -157,11 +157,11 @@ function renderProductsHTML(category, product) {
     })
 }
   
-buttonPowerSupply.addEventListener('click', () => { renderProductsHTML(powerSupply, powerSupply) });
-buttonPowerSupply.addEventListener('click', () => { renderProductsHTML(powerSupply, powerSupply) });
-buttonPowerSupply.addEventListener('click', () => { renderProductsHTML(powerSupply, powerSupply) });
-buttonPowerSupply.addEventListener('click', () => { renderProductsHTML(powerSupply, powerSupply) });
-buttonPowerSupply.addEventListener('click', () => { renderProductsHTML(powerSupply, powerSupply) });
-buttonPowerSupply.addEventListener('click', () => { renderProductsHTML(powerSupply, powerSupply) });
-buttonPowerSupply.addEventListener('click', () => { renderProductsHTML(powerSupply, powerSupply) });
-buttonPowerSupply.addEventListener('click', () => { renderProductsHTML(powerSupply, powerSupply) });
+buttonCPU.addEventListener('click', () => { productsHTML = ''; renderProductsHTML(cpu) });
+buttonGPU.addEventListener('click', () => { productsHTML = ''; renderProductsHTML(gpu) });
+buttonMonitor.addEventListener('click', () => { productsHTML = ''; renderProductsHTML(monitors) });
+buttonMotherboard.addEventListener('click', () => { productsHTML = ''; renderProductsHTML(motherboard) });
+buttonPcCase.addEventListener('click', () => { productsHTML = ''; renderProductsHTML(pcCase) });
+buttonPowerSupply.addEventListener('click', () => { productsHTML = ''; renderProductsHTML(powerSupply) });
+buttonRAM.addEventListener('click', () => { productsHTML = ''; renderProductsHTML(ram) });
+buttonStorage.addEventListener('click', () => { productsHTML = ''; renderProductsHTML(storage) });
