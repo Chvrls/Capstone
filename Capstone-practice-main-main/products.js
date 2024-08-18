@@ -152,7 +152,6 @@ function renderProductsHTML(category) {
           <p class="mt-3 mx-3 fw-bold">${product.name}</p>
           <p class="mt-5 mx-3 fw-bold">₱${product.price}</p>
         </div>`
-    
       productsGrid.innerHTML = productsHTML;
     })
 }
