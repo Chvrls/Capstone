@@ -1,3 +1,4 @@
+import { allProducts } from "./temp-data-for-products/allProducts.js";
 import { pcCase } from "./temp-data-for-products/pcCase.js";
 import { monitors } from "./temp-data-for-products/monitors.js";
 import { cpu } from "./temp-data-for-products/cpu.js";
@@ -8,6 +9,8 @@ import { storage } from "./temp-data-for-products/storage.js";
 import { powerSupply } from "./temp-data-for-products/powerSupply.js";
 
 const productsGrid = document.querySelector('#grid');
+
+const buttonAllProducts = document.querySelector('#btn-all-products');
 const buttonMonitor = document.querySelector('#btn-monitor');
 const buttonPcCase = document.querySelector('#btn-pc-case');
 const buttonCPU = document.querySelector('#btn-cpu');
@@ -155,7 +158,8 @@ function renderProductsHTML(category) {
       productsGrid.innerHTML = productsHTML;
     })
 }
-  
+
+buttonAllProducts.addEventListener('click', () => { productsHTML = ''; renderProductsHTML(allProducts) });
 buttonCPU.addEventListener('click', () => { productsHTML = ''; renderProductsHTML(cpu) });
 buttonGPU.addEventListener('click', () => { productsHTML = ''; renderProductsHTML(gpu) });
 buttonMonitor.addEventListener('click', () => { productsHTML = ''; renderProductsHTML(monitors) });
