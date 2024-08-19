@@ -22,9 +22,23 @@ body {
 
 #components {
   background-color: rgb(245, 241, 241) !important;
+  cursor: pointer;
   transition: .5s ease-in-out;
 }
 
 #components:hover {
   background-color: white !important;
+}
+
+.case-img {
+  width: 70px;
+  height: 60px;
+}
+
+.active {
+  display: block;
+}
+
+.not-active {
+  display: none;
 }
