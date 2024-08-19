@@ -20,19 +20,25 @@ body {
   border: 1px solid black;
 }
 
-#components {
+#components, #components-dropdown {
   background-color: rgb(245, 241, 241) !important;
   cursor: pointer;
   transition: .5s ease-in-out;
 }
 
-#components:hover {
+
+#components:hover, #components-dropdown:hover {
   background-color: white !important;
+}
+
+#components-dropdown:last-child {
+  border-bottom: 1px solid rgb(199, 198, 198) !important;
+  margin-bottom: 8px;
 }
 
 .case-img {
   width: 70px;
-  height: 60px;
+  height: 70px;
 }
 
 .active {
@@ -41,4 +47,9 @@ body {
 
 .not-active {
   display: none;
+}
+
+.component-info {
+  display: inline-block;
+  width: 150px;
 }
