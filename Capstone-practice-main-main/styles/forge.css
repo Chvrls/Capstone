@@ -1,0 +1,30 @@
+body {
+  font-family: 'DM Sans', sans-serif;
+}
+
+#forge-title {
+  font-family: 'DM Serif Text', sans-serif;
+  font-size: 35px;
+}
+
+#container {
+  height: 690px;
+}
+
+.placeholder-for-3d {
+  width: 1000px;
+  height: 600px;
+}
+
+.pc-case {
+  border: 1px solid black;
+}
+
+#components {
+  background-color: rgb(245, 241, 241) !important;
+  transition: .5s ease-in-out;
+}
+
+#components:hover {
+  background-color: white !important;
+}
