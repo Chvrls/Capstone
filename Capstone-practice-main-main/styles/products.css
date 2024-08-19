@@ -26,7 +26,7 @@ body {
     display: flex;
     flex-direction: column;
     width: 342px;
-    background-color: white;
+    background-color: rgb(245, 241, 241);
 }
 
 /* .product-img-container {
@@ -35,5 +35,14 @@ body {
 
 .product-image {
     width: 342px;
-    height: 340px;
+    height: 350px;
+}
+
+.btn-light {
+    background-color: rgb(245, 241, 241) !important;
+    transition: .5s ease-in-out;
+}
+
+.btn-light:hover {
+    background-color: white !important;
 }

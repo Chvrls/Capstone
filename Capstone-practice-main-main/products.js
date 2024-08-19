@@ -154,7 +154,12 @@ function renderProductsHTML(category) {
           <img class="product-image" src="${product.image}" alt="">
         </div>
           <p class="mt-3 mx-3 fw-bold">${product.name}</p>
-          <p class="mt-5 mx-3 fw-bold">₱${product.price}</p>
+          <p class="mb-4 mx-3 fw-bold">₱${product.price}</p>
+          <div>
+            <button type="button" class="border btn-light border-dark rounded-sm mx-3 mb-4 p-2">
+              Add to Cart
+            </button>
+          </div>
         </div>`
       productsGrid.innerHTML = productsHTML;
     })
