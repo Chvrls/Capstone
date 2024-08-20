@@ -26,7 +26,6 @@ body {
   transition: .5s ease-in-out;
 }
 
-
 #components:hover, #components-dropdown:hover {
   background-color: white !important;
 }
@@ -41,15 +40,21 @@ body {
   height: 70px;
 }
 
-.active {
+.show-components {
   display: block;
 }
 
-.not-active {
+.hide-components {
   display: none;
+}
+
+#specs {
+  height: 93vh;
 }
 
 .component-info {
   display: inline-block;
+  font-size: 12px;
   width: 150px;
 }
+
