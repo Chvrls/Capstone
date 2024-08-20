@@ -22,7 +22,8 @@ const showAllRam = document.querySelector('.all-ram');
 const showAllStorage = document.querySelector('.all-storage');
 const showAllPowerSupply = document.querySelector('.all-power-supply');
 
-const componentCard = document.querySelector('#component-card');
+const componentCard = document.querySelectorAll('#component-card');
+const componentsCategory = document.querySelectorAll('#components');
 
 
 let productsHTML = '';
@@ -49,7 +50,7 @@ let productsHTML = '';
   
 // })
 
-function showChosenComponent(componentDiv, componentName) { 
+function showChosenComponent(componentDiv, componentName) {
   componentDiv.classList.toggle('show-components');
   if (componentDiv.classList.contains('show-components')) {
       componentDiv.classList.remove('hide-components');
@@ -70,6 +71,18 @@ function showChosenComponent(componentDiv, componentName) {
   }
 }
 
+// function closeComponentDropdown() {
+//   componentCard.classList.add('hide-components');
+// }
+
+// function showChosenComponent() {
+//   componentsCategory.forEach((card) => {
+//     closeComponentDropdown();
+//   })
+
+// if ()
+// }
+
 caseBtn.addEventListener('click', () => { productsHTML = '';  showChosenComponent(showAllCase, pcCase) });
 cpuBtn.addEventListener('click', () => { productsHTML = ''; showChosenComponent(showAllCpu, cpu) });
 gpuBtn.addEventListener('click', () => { productsHTML = ''; showChosenComponent(showAllGpu, gpu) });
@@ -77,6 +90,5 @@ motherboardBtn.addEventListener('click', () => { productsHTML = ''; showChosenCo
 ramBtn.addEventListener('click', () => { productsHTML = ''; showChosenComponent(showAllRam, ram) });
 storageBtn.addEventListener('click', () => { productsHTML = ''; showChosenComponent(showAllStorage, storage) });
 powerSupplyBtn.addEventListener('click', () => { productsHTML = ''; showChosenComponent(showAllPowerSupply, powerSupply) });
-
 
 
