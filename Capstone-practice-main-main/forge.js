@@ -1,12 +1,12 @@
 import { pcCase } from "./temp-data-for-products/pcCase.js";
 
 const caseBtn = document.querySelector('.case');
-const caseBtn = document.querySelector('.cpu');
-const caseBtn = document.querySelector('.gpu');
-const caseBtn = document.querySelector('.motherboard');
-const caseBtn = document.querySelector('.ram');
-const caseBtn = document.querySelector('.storage');
-const caseBtn = document.querySelector('.power-supply');
+const cpuBtn = document.querySelector('.cpu');
+const gpuBtn = document.querySelector('.gpu');
+const motherboardBtn = document.querySelector('.motherboard');
+const ramBtn = document.querySelector('.ram');
+const storageBtn = document.querySelector('.storage');
+const powerSupplyBtn = document.querySelector('.power-supply');
 const showAllCase = document.querySelector('.all-case');
 
 let productsHTML = '';
