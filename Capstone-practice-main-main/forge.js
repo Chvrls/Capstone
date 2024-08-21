@@ -23,7 +23,6 @@ const showAllStorage = document.querySelector('.all-storage');
 const showAllPowerSupply = document.querySelector('.all-power-supply');
 
 let productsHTML = '';
-
 let currentOpenDropdown = null;
 
 function showChosenComponent(componentDiv, componentName) {
