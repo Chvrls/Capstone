@@ -28,34 +28,21 @@ const componentsCategory = document.querySelectorAll('#components');
 
 let productsHTML = '';
 
-// caseBtn.addEventListener('click', () => {
-//   showAllCase.classList.toggle('active');
-//   if (showAllCase.classList.contains('active')) {
-//       showAllCase.classList.remove('not-active');
-//       pcCase.forEach((product) => {
-//         productsHTML += `
-//       <div class="shadow-none mx-3 bg-body-tertiary border border-dark-subtle border-bottom-0 fw-bold p-2" id="components-dropdown">
-//         <img class="case-img me-5" src="${product.image}" alt="">
-//         <div class="component-info">
-//         <p class="component-info">${product.name}</p>
-//         </div>
-//         <div class="component-info text-end"><p class="text-end">+${product.price}</p></div>
-//       </div>`;
-//         showAllCase.innerHTML = productsHTML;
-//     });
-//   } else if (!showAllCase.classList.contains('active')) {
-//     showAllCase.classList.add('not-active');
-//     productsHTML = '';
-//   }
-  
-// })
+let currentOpenDropdown = null;
 
 function showChosenComponent(componentDiv, componentName) {
+  if (currentOpenDropdown && currentOpenDropdown !== componentDiv) {
+    currentOpenDropdown.classList.remove('show-components');
+    currentOpenDropdown.classList.add('hide-components');
+  }
+
   componentDiv.classList.toggle('show-components');
+
   if (componentDiv.classList.contains('show-components')) {
-      componentDiv.classList.remove('hide-components');
-      componentName.forEach((product) => {
-        productsHTML += `
+    componentDiv.classList.remove('hide-components');
+    productsHTML = '';
+    componentName.forEach((product) => {
+      productsHTML += `
       <div class="shadow-none mx-3 bg-body-tertiary border border-dark-subtle border-bottom-0 fw-bold p-1" id="components-dropdown">
         <img class="case-img me-5" src="${product.image}" alt="">
         <div class="component-info">
@@ -63,24 +50,35 @@ function showChosenComponent(componentDiv, componentName) {
         </div>
         <div class="component-info text-end"><p class="text-end">+${product.price}</p></div>
       </div>`;
-        componentDiv.innerHTML = productsHTML;
     });
-  } else if (!componentDiv.classList.contains('show-components')) {
+    componentDiv.innerHTML = productsHTML;
+    currentOpenDropdown = componentDiv;
+  } else {
     componentDiv.classList.add('hide-components');
-    productsHTML = '';
+    currentOpenDropdown = null;
   }
 }
 
-// function closeComponentDropdown() {
-//   componentCard.classList.add('hide-components');
-// }
-
-// function showChosenComponent() {
-//   componentsCategory.forEach((card) => {
-//     closeComponentDropdown();
-//   })
-
-// if ()
+// BEFORE THE LATEST CODE
+// function showChosenComponent(componentDiv, componentName) {
+//   componentDiv.classList.toggle('show-components');
+//   if (componentDiv.classList.contains('show-components')) {
+//       componentDiv.classList.remove('hide-components');
+//       componentName.forEach((product) => {
+//         productsHTML += `
+//       <div class="shadow-none mx-3 bg-body-tertiary border border-dark-subtle border-bottom-0 fw-bold p-1" id="components-dropdown">
+//         <img class="case-img me-5" src="${product.image}" alt="">
+//         <div class="component-info">
+//         <p class="component-info">${product.name}</p>
+//         </div>
+//         <div class="component-info text-end"><p class="text-end">+${product.price}</p></div>
+//       </div>`;
+//         componentDiv.innerHTML = productsHTML;
+//     });
+//   } else if (!componentDiv.classList.contains('show-components')) {
+//     componentDiv.classList.add('hide-components');
+//     productsHTML = '';
+//   }
 // }
 
 caseBtn.addEventListener('click', () => { productsHTML = '';  showChosenComponent(showAllCase, pcCase) });
