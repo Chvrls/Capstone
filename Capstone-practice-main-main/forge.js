@@ -22,10 +22,6 @@ const showAllRam = document.querySelector('.all-ram');
 const showAllStorage = document.querySelector('.all-storage');
 const showAllPowerSupply = document.querySelector('.all-power-supply');
 
-const componentCard = document.querySelectorAll('#component-card');
-const componentsCategory = document.querySelectorAll('#components');
-
-
 let productsHTML = '';
 
 let currentOpenDropdown = null;
