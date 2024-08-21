@@ -48,8 +48,8 @@ body {
   display: none;
 }
 
-#specs {
-  height: 93vh;
+#component-card {
+  height: 22vh;
 }
 
 .component-info {
