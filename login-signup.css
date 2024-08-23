@@ -2,6 +2,11 @@ body {
   font-family: 'DM Sans', sans-serif;
 }
 
+.image {
+  width: 1001px;
+  height: 650px;
+}
+
 #right-content {
   height: 92vh;
 }
@@ -20,3 +25,4 @@ body {
 .error-message {
   color: red;
 }
+
