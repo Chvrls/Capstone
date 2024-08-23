@@ -31,82 +31,68 @@ function renderSignUpPage() {
     </div>`;
 
   rightContent.innerHTML = renderSignUpHTML;
-
-  // Attach the form event listener after rendering
-  const form = document.querySelector('#form');
-  form.addEventListener('submit', (e) => {
-    const userNameInput = document.querySelector('#username-input');
-    const emailInput = document.querySelector('#email-input');
-    const passwordInput = document.querySelector('#password-input');
-    const confirmPasswordInput = document.querySelector('#confirm-password-input');
-    const errorMessage = document.querySelector('.error-message');
-
-
-    let errors = [];
-
-    if (userNameInput) {
-      errors = getSignUpFormErrors(userNameInput.value, emailInput.value, passwordInput.value, confirmPasswordInput.value);
-    } else { 
-      errors = getLoginFormErrors(emailInput.value, passwordInput.value);
-    }
-
-    if (errors.length > 0) { 
-      e.preventDefault();
-      errorMessage.innerText = errors.join(". ");
-    }
-  });
+  attachFormListener();
 }
 
+function renderLoginPage() {
+  rightContent.innerHTML = loginContent;
+  attachFormListener();
+}
+
+function attachFormListener() {
+  const form = document.querySelector('#form');
+  const errorMessage = document.querySelector('.error-message');
+
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      const userNameInput = document.querySelector('#username-input');
+      const emailInput = document.querySelector('#email-input');
+      const passwordInput = document.querySelector('#password-input');
+      const confirmPasswordInput = document.querySelector('#confirm-password-input');
+      
+      let errors = [];
+
+      if (userNameInput) {
+        errors = getSignUpFormErrors(userNameInput.value, emailInput.value, passwordInput.value, confirmPasswordInput.value);
+      } else {
+        errors = getLoginFormErrors(emailInput.value, passwordInput.value);
+      }
+
+      if (errors.length > 0) {
+        e.preventDefault();
+        errorMessage.innerText = errors.join(". ");
+      }
+    });
+  }
+}
 
 rightContent.addEventListener('click', (event) => {
   if (event.target && event.target.id === 'signup-btn') {
     renderSignUpPage();
   } else if (event.target && event.target.id === 'login-btn') {
-    rightContent.innerHTML = loginContent;
+    renderLoginPage();
   }
 });
 
-signUpBtn.addEventListener('click', renderSignUpPage);
-
-//FORM VALIDATION
-
-const form = document.querySelector('#form');
-const userNameInput = document.querySelector('#username-input');
-const emailInput = document.querySelector('#email-input');
-const passwordInput = document.querySelector('#password-input');
-const confirmPasswordInput = document.querySelector('#confirm-password-input');
-
-// form.addEventListener('submit', (e) => {
-//   let errors = [];
-
-//   if (userNameInput) {
-//     errors = getSignUpFormErrors(userNameInput.value, emailInput.value, passwordInput.value, confirmPasswordInput.value);
-//   } else { 
-//     errors = getLoginFormErrors(emailInput.value, passwordInput.value);
-//   }
-
-//   if (errors.length > 0) { 
-//     e.preventDefault();
-//   }
-// })
+attachFormListener();
 
 function getSignUpFormErrors(username, email, password, confirmPassword) { 
   let errors = [];
 
-  if (username === '' || username === null) { 
+  if (!username) { 
     errors.push('Username is required');
   }
-  if (email === '' || email === null) { 
-    errors.push('Email is required')
+  if (!email) { 
+    errors.push('Email is required');
   }
-  if (password === '' || password === null) { 
-    errors.push('Password is required')
+  if (!password) { 
+    errors.push('Password is required');
   }
   if (password.length < 8) { 
-    errors.push('Password must have atleast 8 characters');
+    errors.push('Password must have at least 8 characters');
   }
   if (confirmPassword !== password) { 
-    errors.push('Password does not match')
+    errors.push('Passwords do not match');
   }
 
   return errors;
@@ -115,11 +101,11 @@ function getSignUpFormErrors(username, email, password, confirmPassword) {
 function getLoginFormErrors(email, password) { 
   let errors = [];
 
-  if (email === '' || email === null) { 
-    errors.push('Email is required')
+  if (!email) { 
+    errors.push('Email is required');
   }
-  if (password === '' || password === null) { 
-    errors.push('Password is required')
+  if (!password) { 
+    errors.push('Password is required');
   }
 
   return errors;
