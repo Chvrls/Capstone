@@ -6,6 +6,11 @@ body {
   height: 92vh;
 }
 
+.login-signup-h1 {
+  font-family: 'DM Serif Text', sans-serif;
+  font-size: 50px;
+}
+
 .btn {
   font-size: 1rem !important;
   padding: 0.9rem 0;

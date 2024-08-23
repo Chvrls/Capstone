@@ -4,6 +4,9 @@ const loginContent = rightContent.innerHTML;
 
 function renderSignUpPage() {
   const renderSignUpHTML = `
+    <div class="container mb-3 ms-4">
+      <h1 class="login-signup-h1">Sign up</h1>
+    </div>
     <form action="/signup" class="d-flex flex-column align-items-center" id="form">
       <div class="col-lg-10 mb-2">
         <input class="form-control border border-dark" type="text" name="username" id="username-input" placeholder="Username">
