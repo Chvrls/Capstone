@@ -20,6 +20,10 @@ body {
   border: 1px solid black;
 }
 
+#component-card::-webkit-scrollbar {
+  width: 0px;
+}
+
 #components, #components-dropdown {
   background-color: rgb(245, 241, 241) !important;
   cursor: pointer;
