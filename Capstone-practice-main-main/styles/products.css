@@ -49,8 +49,8 @@ body {
 
 @media (max-width: 600px) {
     #grid {
-        grid-template-columns: repeat(2, 1fr); /* Still 2 cards per row on very small screens */
-        margin-inline: 0px; /* Adjust margins for smaller screens */
+        grid-template-columns: repeat(2, 1fr); 
+        margin-inline: 0px; 
     }
 }
 
@@ -61,9 +61,6 @@ body {
     background-color: rgb(245, 241, 241);
 }
 
-/* .product-img-container {
-    padding: 10px;
-} */
 
 .product-image {
     width: 100%;
