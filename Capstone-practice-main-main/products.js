@@ -151,7 +151,7 @@ function renderProductsHTML(category) {
   category.forEach((product) => {
         productsHTML += `<div class="product-card">
         <div class="product-img-container">
-          <img class="product-image" src="${product.image}" alt="">
+          <img class="product-image img-fluid" src="${product.image}" alt="">
         </div>
           <p class="mt-3 mx-3 fw-bold">${product.name}</p>
           <p class="mb-4 mx-3 fw-bold">₱${product.price}</p>
