@@ -25,128 +25,6 @@ const buttonPowerSupply = document.querySelector('#btn-power-supply');
 
 let productsHTML = '';
 
-// buttonPcCase.addEventListener('click', () => {
-//   productsHTML = '';
-//   pcCase.forEach((pcCase) => {
-//     productsHTML += `
-//     <div class="product-card">
-//     <div class="product-img-container">
-//       <img class="product-image" src="${pcCase.image}" alt="">
-//     </div>
-//       <p class="mt-3 mx-3 fw-bold">${pcCase.name}</p>
-//       <p class="mt-5 mx-3 fw-bold">₱${pcCase.price}</p>
-//     </div>`
-
-//     productsGrid.innerHTML = productsHTML;
-//   })
-// });
-
-
-// buttonMonitor.addEventListener('click', () => {
-//   productsHTML = '';
-//   monitors.forEach((monitor) => {
-//     productsHTML += `<div class="product-card">
-//     <div class="product-img-container">
-//       <img class="product-image" src="${monitor.image}" alt="">
-//     </div>
-//       <p class="mt-3 mx-3 fw-bold">${monitor.name}</p>
-//       <p class="mt-5 mx-3 fw-bold">₱${monitor.price}</p>
-//     </div>`
-
-//     productsGrid.innerHTML = productsHTML;
-//   })
-// });
-
-// buttonCPU.addEventListener('click', () => {
-//   productsHTML = '';
-//   cpu.forEach((cpu) => {
-//     productsHTML += `<div class="product-card">
-//     <div class="product-img-container">
-//       <img class="product-image" src="${cpu.image}" alt="">
-//     </div>
-//       <p class="mt-3 mx-3 fw-bold">${cpu.name}</p>
-//       <p class="mt-5 mx-3 fw-bold">₱${cpu.price}</p>
-//     </div>`
-
-//     productsGrid.innerHTML = productsHTML;
-//   })
-// });
-
-// buttonGPU.addEventListener('click', () => {
-//   productsHTML = '';
-//   gpu.forEach((gpu) => {
-//     productsHTML += `<div class="product-card">
-//     <div class="product-img-container">
-//       <img class="product-image" src="${gpu.image}" alt="">
-//     </div>
-//       <p class="mt-3 mx-3 fw-bold">${gpu.name}</p>
-//       <p class="mt-5 mx-3 fw-bold">₱${gpu.price}</p>
-//     </div>`
-
-//     productsGrid.innerHTML = productsHTML;
-//   })
-// });
-
-// buttonMotherboard.addEventListener('click', () => {
-//   productsHTML = '';
-//   motherboard.forEach((motherboard) => {
-//     productsHTML += `<div class="product-card">
-//     <div class="product-img-container">
-//       <img class="product-image" src="${motherboard.image}" alt="">
-//     </div>
-//       <p class="mt-3 mx-3 fw-bold">${motherboard.name}</p>
-//       <p class="mt-5 mx-3 fw-bold">₱${motherboard.price}</p>
-//     </div>`
-
-//     productsGrid.innerHTML = productsHTML;
-//   })
-// });
-
-// buttonRAM.addEventListener('click', () => {
-//   productsHTML = '';
-//   ram.forEach((ram) => {
-//     productsHTML += `<div class="product-card">
-//     <div class="product-img-container">
-//       <img class="product-image" src="${ram.image}" alt="">
-//     </div>
-//       <p class="mt-3 mx-3 fw-bold">${ram.name}</p>
-//       <p class="mt-5 mx-3 fw-bold">₱${ram.price}</p>
-//     </div>`
-
-//     productsGrid.innerHTML = productsHTML;
-//   })
-// });
-
-// buttonStorage.addEventListener('click', () => {
-//   productsHTML = '';
-//   storage.forEach((storage) => {
-//     productsHTML += `<div class="product-card">
-//     <div class="product-img-container">
-//       <img class="product-image" src="${storage.image}" alt="">
-//     </div>
-//       <p class="mt-3 mx-3 fw-bold">${storage.name}</p>
-//       <p class="mt-5 mx-3 fw-bold">₱${storage.price}</p>
-//     </div>`
-
-//     productsGrid.innerHTML = productsHTML;
-//   })
-// });
-
-// buttonPowerSupply.addEventListener('click', () => {
-//   productsHTML = '';
-//   powerSupply.forEach((powerSupply) => {
-//     productsHTML += `<div class="product-card">
-//     <div class="product-img-container">
-//       <img class="product-image" src="${powerSupply.image}" alt="">
-//     </div>
-//       <p class="mt-3 mx-3 fw-bold">${powerSupply.name}</p>
-//       <p class="mt-5 mx-3 fw-bold">₱${powerSupply.price}</p>
-//     </div>`
-
-//     productsGrid.innerHTML = productsHTML;
-//   })
-// });
-
 function renderProductsHTML(category) { 
   category.forEach((product) => {
         productsHTML += `<div class="product-card">
@@ -179,3 +57,39 @@ function changeCategoryText(category) {
 // buttonPowerSupply.addEventListener('click', () => { productsHTML = ''; renderProductsHTML(powerSupply); changeCategoryText('Power Supply') });
 // buttonRAM.addEventListener('click', () => { productsHTML = ''; renderProductsHTML(ram); changeCategoryText('RAM') });
 // buttonStorage.addEventListener('click', () => { productsHTML = ''; renderProductsHTML(storage); changeCategoryText('Storage') });
+
+function handleRouting() {
+  const path = window.location.pathname;
+  productsHTML = ''; // Clear previous content
+
+  if (path === '/products/motherboards') {
+    renderProductsHTML(motherboard);
+    changeCategoryText('Motherboard');
+  } else if (path === '/products/cpu') {
+    renderProductsHTML(cpu);
+    changeCategoryText('CPU');
+  } else if (path === '/products/gpu') {
+    renderProductsHTML(gpu);
+    changeCategoryText('GPU');
+  } // Add more routes as needed
+  else {
+    renderProductsHTML(allProducts);
+    changeCategoryText('All Products');
+  }
+}
+
+// Listen for route changes
+window.addEventListener('popstate', handleRouting);
+
+// Handle initial load
+document.addEventListener('DOMContentLoaded', () => {
+  handleRouting();
+  document.querySelectorAll('a').forEach(anchor => {
+    anchor.addEventListener('click', (event) => {
+      event.preventDefault();
+      const href = anchor.getAttribute('href');
+      window.history.pushState({}, '', href);
+      handleRouting();
+    });
+  });
+});
