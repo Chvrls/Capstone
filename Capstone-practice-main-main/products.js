@@ -170,12 +170,12 @@ function changeCategoryText(category) {
 }
 
 
-buttonAllProducts.addEventListener('click', () => { productsHTML = ''; renderProductsHTML(allProducts); changeCategoryText('All Products') });
-buttonCPU.addEventListener('click', () => { productsHTML = ''; renderProductsHTML(cpu); changeCategoryText('CPU') });
-buttonGPU.addEventListener('click', () => { productsHTML = ''; renderProductsHTML(gpu); changeCategoryText('GPU') });
-buttonMonitor.addEventListener('click', () => { productsHTML = ''; renderProductsHTML(monitors); changeCategoryText('Monitor') });
-buttonMotherboard.addEventListener('click', () => { productsHTML = ''; renderProductsHTML(motherboard); changeCategoryText('Motherboard') });
-buttonPcCase.addEventListener('click', () => { productsHTML = ''; renderProductsHTML(pcCase); changeCategoryText('PC Case') });
-buttonPowerSupply.addEventListener('click', () => { productsHTML = ''; renderProductsHTML(powerSupply); changeCategoryText('Power Supply') });
-buttonRAM.addEventListener('click', () => { productsHTML = ''; renderProductsHTML(ram); changeCategoryText('RAM') });
-buttonStorage.addEventListener('click', () => { productsHTML = ''; renderProductsHTML(storage); changeCategoryText('Storage') });
+// buttonAllProducts.addEventListener('click', () => { productsHTML = ''; renderProductsHTML(allProducts); changeCategoryText('All Products') });
+// buttonCPU.addEventListener('click', () => { productsHTML = ''; renderProductsHTML(cpu); changeCategoryText('CPU') });
+// buttonGPU.addEventListener('click', () => { productsHTML = ''; renderProductsHTML(gpu); changeCategoryText('GPU') });
+// buttonMonitor.addEventListener('click', () => { productsHTML = ''; renderProductsHTML(monitors); changeCategoryText('Monitor') });
+// buttonMotherboard.addEventListener('click', () => { productsHTML = ''; renderProductsHTML(motherboard); changeCategoryText('Motherboard') });
+// buttonPcCase.addEventListener('click', () => { productsHTML = ''; renderProductsHTML(pcCase); changeCategoryText('PC Case') });
+// buttonPowerSupply.addEventListener('click', () => { productsHTML = ''; renderProductsHTML(powerSupply); changeCategoryText('Power Supply') });
+// buttonRAM.addEventListener('click', () => { productsHTML = ''; renderProductsHTML(ram); changeCategoryText('RAM') });
+// buttonStorage.addEventListener('click', () => { productsHTML = ''; renderProductsHTML(storage); changeCategoryText('Storage') });
