@@ -4,24 +4,24 @@ const loginContent = rightContent.innerHTML;
 
 function renderSignUpPage() {
   const renderSignUpHTML = `
-    <div class="container mb-3 ms-4">
+    <div class="container mb-3 ms-0">
       <h1 class="login-signup-h1">Sign up</h1>
     </div>
     <form action="/signup" class="d-flex flex-column align-items-center" id="form">
-      <div class="col-lg-10 mb-2">
+      <div class="col-lg-10 mb-2 w-100">
         <input class="form-control border border-dark" type="text" name="username" id="username-input" placeholder="Username">
       </div>
-      <div class="col-lg-10 mb-3">
+      <div class="col-lg-10 mb-3 w-100">
         <input class="form-control border border-dark" type="email" name="email" id="email-input" placeholder="Email">
       </div>
-      <div class="col-lg-10 mb-3">
+      <div class="col-lg-10 mb-3 w-100">
         <input class="form-control border border-dark" type="password" name="password" id="password-input" placeholder="Password">
       </div>
-      <div class="col-lg-10 mb-3">
+      <div class="col-lg-10 mb-3 w-100">
         <input class="form-control border border-dark" type="password" name="confirm-password" id="confirm-password-input" placeholder="Confirm Password">
       </div>
       <p class="error-message text-center"></p>
-      <button type="submit" class="btn btn-lg btn-outline-dark col-lg-10 fw-bold">Sign Up</button>
+      <button type="submit" class="btn btn-lg btn-outline-dark col-lg-10 fw-bold w-100">Sign Up</button>
     </form>
     <div>
       <p class="d-flex justify-content-center mt-5 mb-5 fw-bold">OR</p>
@@ -30,7 +30,7 @@ function renderSignUpPage() {
       <p class="d-flex justify-content-center">If you already have an account, click here to login!</p>
     </div>
     <div class="d-flex justify-content-center mt-3">
-      <button class="btn btn-lg btn-outline-dark col-lg-10 fw-bold" id="login-btn">Login</button>
+      <button class="btn btn-lg btn-outline-dark col-lg-10 fw-bold w-100" id="login-btn">Login</button>
     </div>`;
 
   rightContent.innerHTML = renderSignUpHTML;
