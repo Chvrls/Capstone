@@ -26,3 +26,15 @@ body {
   color: red;
 }
 
+#right-content {
+  padding: 2rem;
+}
+@media (max-width: 991.98px) {
+  .container-fluid {
+    padding: 1rem;
+  }
+  .col-lg-6 {
+    max-width: 100%;
+    padding: 2rem;
+  }
+}
