@@ -38,3 +38,6 @@ body {
     padding: 2rem;
   }
 }
+.form-control, .btn {
+  width: 100%;
+}
