@@ -14,35 +14,34 @@
 <body>
   <div class="container-fluid">
     <div class="row">
-      <div class="col-lg-6 px-0 d-none d-lg-block"><img class="image img-fluid w-100 h-100 object-fit-cover" src="./Capstone-practice-main-main/images/temp-bg.avif" alt=""></div>
-      <div class="col-lg-6 d-flex justify-content-center flex-column border-start border-dark col-md-12" id="right-content">
-        <div class="container mb-3">
-          <h1 class="login-signup-h1">Log In</h1>
-        </div>
-        <form action="/login" class="d-flex flex-column align-items-center" id="form">
-          <div class="col-lg-10 mb-2">
-            <input class="form-control border border-dark" type="email" name="email" id="email-input" placeholder="E-mail">
+      <div class="col-lg-8 px-0 d-none d-lg-block"><img class="image img-fluid w-100 h-100 object-fit-cover" src="./Capstone-practice-main-main/images/temp-bg.avif" alt=""></div>
+        <div class="col-lg-4 d-flex justify-content-center flex-column col-md-12" id="right-content">
+          <div class="container mb-3">
+            <h1 class="login-signup-h1">Log In</h1>
           </div>
-          <div class="col-lg-10 mb-3">
-            <input class="form-control border border-dark" type="password" name="password" id="password-input" placeholder="Password">
+          <form action="/login" class="d-flex flex-column align-items-center" id="form">
+            <div class="col-lg-10 mb-2 w-100">
+              <input class="form-control border border-dark " type="email" name="email" id="email-input" placeholder="E-mail">
+            </div>
+            <div class="col-lg-10 mb-3 w-100">
+              <input class="form-control border border-dark w-100" type="password" name="password" id="password-input" placeholder="Password">
+            </div>
+            <p class="error-message text-center"></p>
+            <button type="submit" class="btn btn-lg btn-outline-dark w-100 fw-bold">Login</button>
+          </form>
+          <div>
+            <p class="d-flex justify-content-center mt-5 mb-5 fw-bold">OR</p>
           </div>
-          <p class="error-message text-center"></p>
-          <div class="col-lg-10 mb-3">
-            <button type="submit" class="btn btn-lg btn-outline-dark fw-bold">Login</button>
+          <div>
+            <p class="d-flex justify-content-center">If you don't have an account yet, click here to sign up now!</p>
           </div>
-        </form>
-        <div class="col-lg-10 mb-3">
-          <p class="d-flex justify-content-center mt-5 mb-5 fw-bold">OR</p>
-        </div>
-        <div class="col-lg-10 mb-3">
-          <p class="d-flex justify-content-center">If you don't have an account yet, click here to sign up now!</p>
-        </div>
-        <div class="col-lg-10">
-          <button class="btn btn-lg btn-outline-dark fw-bold" id="signup-btn">Sign up</button>
+          <div class="d-flex justify-content-center mt-3">
+            <button class="btn btn-lg btn-outline-dark fw-bold w-100" id="signup-btn">Sign up</button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+</div>
 
 
 <script src="login-signup.js"></script>
